@@ -52,3 +52,4 @@ echo "2. Update Farcaster manifest URLs with your Vercel domain"
 echo "3. Regenerate account association signature"
 echo ""
 echo "📖 See DEPLOYMENT.md for full instructions"
+n
