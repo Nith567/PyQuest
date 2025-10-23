@@ -10,8 +10,8 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    const NEYNAR_API_KEY = '3D4F2112-0E0B-4955-A49D-540975BB75B7';
-    const SIGNER_UUID = process.env.NEYNAR_SIGNER_UUID || '19d0c5fd-9b33-4a48-a0e2-bc7b0555baec';
+    const NEYNAR_API_KEY = process.env.VITE_NEYNAR_API_KEY;
+    const SIGNER_UUID = process.env.VITE_NEYNAR_SIGNER_UUID;
 
     // Create winner announcement text
     const blockscoutUrl = `https://arbitrum.blockscout.com/tx/${txHash}`;

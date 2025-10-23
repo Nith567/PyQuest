@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 check-mongo.js
+.vercel

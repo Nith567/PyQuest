@@ -4,7 +4,7 @@ import { arbitrum } from "viem/chains";
  * API Configuration
  */
 export const apiConfig = {
-  baseUrl: import.meta.env.VITE_API_URL || 'https://eighty-areas-itch.loca.lt',
+  baseUrl: import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && window.location.origin) || '',
 } as const;
 
 /**

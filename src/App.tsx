@@ -9,7 +9,6 @@ import {
 
 import PyQuestHome from "./components/pyquest/PyQuestHome";
 import CreateBounty from "./components/pyquest/CreateBounty";
-import HuntBounties from "./components/pyquest/HuntBounties";
 import MyBounties from "./components/pyquest/MyBounties";
 import Leaderboard from "./components/pyquest/Leaderboard";
 
