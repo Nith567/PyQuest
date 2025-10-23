@@ -27,7 +27,6 @@ function App() {
               <Routes>
                 <Route path="/" element={<PyQuestHome />} />
                 <Route path="/bounty" element={<CreateBounty />} />
-                <Route path="/hunt" element={<HuntBounties />} />
                 <Route path="/my-bounties" element={<MyBounties />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />
               </Routes>
