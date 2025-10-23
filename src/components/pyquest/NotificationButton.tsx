@@ -6,7 +6,6 @@ import sdk, { AddMiniApp } from "@farcaster/miniapp-sdk"
 
 export default function NotificationButton() {
   const [notificationDetails, setNotificationDetails] = useState<any>(null)
-  const [addFrameResult, setAddFrameResult] = useState<string>("")
   const [isLoading, setIsLoading] = useState(false)
 
   const addFrame = useCallback(async () => {
@@ -18,20 +17,15 @@ export default function NotificationButton() {
 
       if (result.notificationDetails) {
         setNotificationDetails(result.notificationDetails)
-        setAddFrameResult(
-          `Added, got notification token ${result.notificationDetails.token} and url ${result.notificationDetails.url}`
-        )
         console.log('✅ Notifications enabled:', result.notificationDetails)
-      } else {
-        setAddFrameResult("Added, got no notification details")
       }
     } catch (error) {
       if (error instanceof AddMiniApp.RejectedByUser) {
-        setAddFrameResult(`Not added: ${error.message}`)
+        console.log('❌ User rejected:', error.message)
       } else if (error instanceof AddMiniApp.InvalidDomainManifest) {
-        setAddFrameResult(`Not added: ${error.message}`)
+        console.log('❌ Invalid manifest:', error.message)
       } else {
-        setAddFrameResult(`Error: ${error}`)
+        console.log('❌ Error:', error)
       }
       console.error('❌ Error enabling notifications:', error)
     } finally {
