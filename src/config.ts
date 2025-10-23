@@ -31,7 +31,7 @@ export const metadata = {
   name: "PyQuest - Farcaster Bounty Platform",
   description:
     "Post bounties, hunt tasks, and earn PYUSD rewards! PyQuest connects bounty posters with skilled hunters on Farcaster. Create bounties with PYUSD rewards, receive submissions as cast replies, and reward the best work.",
-  imageUrl: "https://1e5f347b6b35.ngrok-free.app/pyquest-icon.png",
+  imageUrl: "https://pyquest.vercel.app/pyquest-icon.png",
   creator: {
     name: "nith567.eth",
     fid: 382654,
@@ -49,13 +49,13 @@ export const metadata = {
  */
 export const embedConfig = {
   version: "next",
-  imageUrl: "https://1e5f347b6b35.ngrok-free.app/pyquest-icon.png",
+  imageUrl: "https://pyquest.vercel.app/pyquest-icon.png",
   button: {
     title: "Open PyQuest",
     action: {
       type: "launch_frame",
       name: "PyQuest",
-      url: "https://1e5f347b6b35.ngrok-free.app",
+      url: "https://pyquest.vercel.app",
     },
   },
 } as const;

@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   // Get the base URL from environment or request
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 
                   process.env.VITE_APP_URL || 
-                  'https://arbi-blocks-24va.vercel.app';
+                  'https://pyquest.vercel.app';
 
   const manifest = {
     accountAssociation: {

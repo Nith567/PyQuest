@@ -8,11 +8,11 @@
   "frame": {
     "version": "1",
     "name": "PyQuest",
-    "iconUrl": "https://1e5f347b6b35.ngrok-free.app/pyquest-icon.png",
-    "homeUrl": "https://1e5f347b6b35.ngrok-free.app",
-    "imageUrl": "https://1e5f347b6b35.ngrok-free.app/pyquest-icon.png",
+    "iconUrl": "https://pyquest.vercel.app/pyquest-icon.png",
+    "homeUrl": "https://pyquest.vercel.app",
+    "imageUrl": "https://pyquest.vercel.app/pyquest-icon.png",
     "buttonTitle": "Launch PyQuest",
-    "splashImageUrl": "https://1e5f347b6b35.ngrok-free.app/pyquest-icon.png",
+    "splashImageUrl": "https://pyquest.vercel.app/pyquest-icon.png",
     "splashBackgroundColor": "#7c3aed",
     "webhookUrl": "https://api.neynar.com/f/app/4d455c47-492f-4014-8b69-0613c80b23f2/event"
   }

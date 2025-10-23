@@ -43,7 +43,7 @@ app.use(cors({
     'http://localhost:5173',
     'http://localhost:5174', 
     'https://0dc4d053f084.ngrok-free.app',
-    'https://1e5f347b6b35.ngrok-free.app',
+    'https://pyquest.vercel.app',
     'https://eighty-areas-itch.loca.lt'
   ],
   credentials: true
