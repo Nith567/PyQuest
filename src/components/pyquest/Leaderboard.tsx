@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { apiConfig } from "../../config"
 
 interface HunterStats {
   address: string
@@ -33,7 +34,7 @@ export default function Leaderboard() {
   const fetchStats = async () => {
     try {
       setIsLoading(true)
-      const response = await fetch(`https://eighty-areas-itch.loca.lt/api/hypersync-stats`)
+      const response = await fetch(`${apiConfig.baseUrl}/api/hypersync-stats`)
       
       if (!response.ok) {
         throw new Error('Failed to fetch stats')
