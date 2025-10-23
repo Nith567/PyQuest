@@ -275,7 +275,7 @@ export default function MyBounties() {
         `https://api.neynar.com/v2/farcaster/cast/conversation/?reply_depth=1&limit=20&identifier=${bounty.castHash}&type=hash`,
         {
           headers: {
-            'x-api-key': '3D4F2112-0E0B-4955-A49D-540975BB75B7',
+            'x-api-key': import.meta.env.VITE_NEYNAR_API_KEY,
             'x-neynar-experimental': 'true'
           }
         }
