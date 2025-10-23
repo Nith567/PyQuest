@@ -3,18 +3,14 @@ import {
   getContract,
 } from "thirdweb";
 import { defineChain } from "thirdweb/chains";
-import { privateKeyToAccount } from "thirdweb/wallets";
 
 // Create the client with your clientId
 export const client = createThirdwebClient({
   clientId: import.meta.env.VITE_THIRDWEB_CLIENT_ID,
 });
 
-// Create account from private key for server-side transactions
-export const gameAccount = privateKeyToAccount({
-  client,
-  privateKey: import.meta.env.VITE_GAME_PRIVATE_KEY,
-});
+// NOTE: gameAccount removed - private keys should NEVER be in browser code
+// Use backend API routes for any transactions that need private keys
 
 // Connect to your token contract on Arbitrum
 export const contract = getContract({
