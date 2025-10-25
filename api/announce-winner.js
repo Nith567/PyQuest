@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
     // Create winner announcement text
     const blockscoutUrl = `https://arbitrum.blockscout.com/tx/${txHash}`;
-    const announcementText = `🏆 WINNER SELECTED!\n\n@${winnerUsername} has been rewarded ${amount} PYUSD for completing Bounty #${bountyId}!\n\n✅ TX: ${blockscoutUrl}\n\nCongrats! 🎉`;
+    const announcementText = `🏆 WINNER SELECTED!\n\n @${winnerUsername} has been rewarded ${amount} PYUSD for completing Bounty #${bountyId}!\n\n✅ TX: ${blockscoutUrl}\n\nCongrats! 🎉`;
 
     // Post reply to original bounty cast
     const response = await fetch('https://api.neynar.com/v2/farcaster/cast', {

@@ -81,12 +81,56 @@ export default function MyBounties() {
 
   const announceWinner = async (bounty: Bounty, txHash: string) => {
     try {
+      console.log('🔍 DEBUG: Looking for winner...')
+      console.log('  - Hunter address:', bounty.hunter)
+      console.log('  - Bounty cast hash:', bounty.castHash)
+
+      // Fetch submissions for THIS specific bounty (not relying on current state)
+      let currentSubmissions: Submission[] = []
+      
+      if (bounty.castHash) {
+        console.log('📡 Fetching fresh submissions for winner announcement...')
+        
+        try {
+          const response = await fetch(
+            `https://api.neynar.com/v2/farcaster/cast/conversation/?reply_depth=1&limit=20&identifier=${bounty.castHash}&type=hash`,
+            {
+              headers: {
+                'x-api-key': import.meta.env.VITE_NEYNAR_API_KEY,
+                'x-neynar-experimental': 'true'
+              }
+            }
+          )
+
+          if (response.ok) {
+            const data = await response.json()
+            currentSubmissions = data.conversation?.cast?.direct_replies || []
+            console.log('✅ Fetched submissions for winner announcement:', currentSubmissions.length)
+          }
+        } catch (error) {
+          console.error('❌ Error fetching submissions for winner announcement:', error)
+        }
+      }
+
+      console.log('  - Total submissions for this bounty:', currentSubmissions.length)
+      console.log('  - Submissions data:', currentSubmissions.map(s => ({
+        username: s.author.username,
+        ethAddresses: s.author.verified_addresses?.eth_addresses,
+        allVerifiedAddresses: s.author.verified_addresses
+      })))
+
       // Find the winner's submission to get their username
-      const winnerSubmission = submissions.find(s => 
+      const winnerSubmission = currentSubmissions.find(s => 
         s.author.verified_addresses?.eth_addresses?.some(addr => 
           addr.toLowerCase() === bounty.hunter.toLowerCase()
         )
       )
+      
+      console.log('🎯 Winner submission found:', winnerSubmission ? {
+        username: winnerSubmission.author.username,
+        displayName: winnerSubmission.author.display_name,
+        ethAddresses: winnerSubmission.author.verified_addresses?.eth_addresses
+      } : 'NOT FOUND')
       
       const winnerUsername = winnerSubmission?.author.username || 'winner'
       const amount = formatUnits(bounty.amount, 6)
