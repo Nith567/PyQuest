@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { castHash, winnerUsername, amount, txHash, bountyId, winnerAddress } = req.body;
+    const { castHash, amount, txHash, bountyId, winnerAddress } = req.body;
 
     if (!castHash || !amount || !txHash || !bountyId) {
       return res.status(400).json({ error: 'Missing required fields' });

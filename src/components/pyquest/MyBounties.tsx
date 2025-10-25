@@ -132,7 +132,6 @@ export default function MyBounties() {
         ethAddresses: winnerSubmission.author.verified_addresses?.eth_addresses
       } : 'NOT FOUND')
       
-      const winnerUsername = winnerSubmission?.author.username || 'winner'
       const amount = formatUnits(bounty.amount, 6)
       
       console.log('📢 Announcing winner on Farcaster...')
@@ -144,7 +143,6 @@ export default function MyBounties() {
         },
         body: JSON.stringify({
           castHash: bounty.castHash,
-          winnerUsername,
           winnerAddress: bounty.hunter, // Pass the winner's wallet address
           amount,
           txHash,
