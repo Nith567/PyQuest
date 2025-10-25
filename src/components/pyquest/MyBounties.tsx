@@ -145,6 +145,7 @@ export default function MyBounties() {
         body: JSON.stringify({
           castHash: bounty.castHash,
           winnerUsername,
+          winnerAddress: bounty.hunter, // Pass the winner's wallet address
           amount,
           txHash,
           bountyId: bounty.id,
