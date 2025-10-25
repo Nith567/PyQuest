@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       buttonTitle: "Launch PyQuest",
       splashImageUrl: `${baseUrl}/pyquest-icon.png`,
       splashBackgroundColor: "#7c3aed",
-      webhookUrl: "https://api.neynar.com/f/app/4d455c47-492f-4014-8b69-0613c80b23f2/event"
+      webhookUrl: "https://api.neynar.com/f/app/bb5dfc29-9238-4bf9-b096-63bff0226a5f/event"
     }
   };
 
