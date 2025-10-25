@@ -146,32 +146,23 @@ export default function PyQuestHome() {
       </div>
 
       {/* Action Buttons - Mobile First */}
-      <div className="grid grid-cols-3 gap-2 mb-4">
-        {/* Hunt Bounties Button */}
-        <button
-          onClick={() => navigate("/hunt")}
-          className="bg-gradient-to-r from-green-400 to-emerald-500 text-white font-black py-3 px-3 border-2 border-slate-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-xs rounded flex flex-col items-center justify-center gap-1 transition-all duration-200 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-        >
-          <span className="text-2xl">🎯</span>
-          <span className="text-[10px] leading-tight">HUNT<br/>BOUNTIES</span>
-        </button>
-
+      <div className="grid grid-cols-2 gap-3 mb-4">
         {/* My Bounties Button */}
         <button
           onClick={() => navigate("/my-bounties")}
-          className="bg-gradient-to-r from-purple-400 to-indigo-500 text-white font-black py-3 px-3 border-2 border-slate-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-xs rounded flex flex-col items-center justify-center gap-1 transition-all duration-200 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+          className="bg-gradient-to-r from-purple-400 to-indigo-500 text-white font-black py-4 px-4 border-2 border-slate-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm rounded flex flex-col items-center justify-center gap-2 transition-all duration-200 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
         >
-          <span className="text-2xl">📋</span>
+          <span className="text-3xl">📋</span>
           <span>MY BOUNTIES</span>
         </button>
 
         {/* Leaderboard Button */}
         <button
           onClick={() => navigate("/leaderboard")}
-          className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-black py-3 px-3 border-2 border-slate-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-xs rounded flex flex-col items-center justify-center gap-1 transition-all duration-200 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+          className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-black py-4 px-4 border-2 border-slate-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm rounded flex flex-col items-center justify-center gap-2 transition-all duration-200 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
         >
-          <span className="text-2xl">🏆</span>
-          <span className="text-[10px] leading-tight">LEADER<br/>BOARD</span>
+          <span className="text-3xl">🏆</span>
+          <span>LEADERBOARD</span>
         </button>
       </div>
 

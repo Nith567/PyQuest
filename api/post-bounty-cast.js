@@ -39,7 +39,7 @@ export default async function handler(req, res) {
     }
 
     // Format the cast text
-    const castText = `🎯 NEW BOUNTY #${bountyId}
+    const castText = `🎯 NEW Quest #${bountyId}
 ${creatorUsername ? `Posted by: @${creatorUsername}\n` : ''}
 ${taskDescription}
 
