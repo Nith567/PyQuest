@@ -11,7 +11,7 @@ let lastProcessedBlock = null;
 async function notifyWinner(hunterAddress, amount, txHash) {
   try {
     const amountInPYUSD = (Number(amount) / 1000000).toFixed(4);
-    const blockscoutUrl = `https://arbiscan.io/tx/${txHash}`;
+    const blockscoutUrl = `https://arbitrum.blockscout.com/tx/${txHash}`;
     
     const notificationPayload = {
       notification: {

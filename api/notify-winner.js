@@ -53,7 +53,7 @@ export default async function handler(req, res) {
     const notificationUUID = crypto.randomUUID();
     
     const amountInPYUSD = (parseFloat(amount) / 1000000).toFixed(4);
-    const blockscoutUrl = `https://arbiscan.io/tx/${txHash}`;
+    const blockscoutUrl = `https://arbitrum.blockscout.com/tx/${txHash}`;
     
     const notificationPayload = {
       notification: {

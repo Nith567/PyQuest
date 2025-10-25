@@ -47,7 +47,7 @@ ${taskDescription}
 
 Reply to this cast with your submission to claim the bounty!
 
-${txHash ? `🔗 TX: https://arbiscan.io/tx/${txHash}` : ''}`;
+${txHash ? `🔗 TX: https://arbitrum.blockscout.com/tx/${txHash}` : ''}`;
 
     // Post to Farcaster using Neynar API
     const response = await fetch('https://api.neynar.com/v2/farcaster/cast', {
