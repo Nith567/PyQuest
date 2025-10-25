@@ -1,16 +1,22 @@
-import express from 'express';
-import cors from 'cors';
-
-const router = express.Router();
-
-// Enable CORS
-router.use(cors());
-
 /**
  * POST /api/post-bounty-cast
  * Posts a new bounty to Farcaster
  */
-router.post('/post-bounty-cast', async (req, res) => {
+export default async function handler(req, res) {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  
+  // Only allow POST method
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
   try {
     const { bountyId, taskDescription, amount, txHash, creatorAddress, creatorUsername } = req.body;
 
@@ -81,6 +87,4 @@ ${txHash ? `🔗 TX: https://arbiscan.io/tx/${txHash}` : ''}`;
       message: error.message 
     });
   }
-});
-
-export default router;
+}
