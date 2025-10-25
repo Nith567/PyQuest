@@ -3,7 +3,7 @@ import cors from 'cors'
 import { MongoClient } from 'mongodb'
 import dotenv from 'dotenv'
 // import postBountyCastRouter from './api/post-bounty-cast.js' // Converted to Vercel serverless function
-import bountiesRouter, { setClientPromise } from './api/bounties.js'
+// import bountiesRouter, { setClientPromise } from './api/bounties.js' // Converted to Vercel serverless function
 import announceWinnerHandler from './api/announce-winner.js'
 import hypersyncStatsHandler from './api/hypersync-stats.js'
 import notifyWinnerHandler from './api/notify-winner.js'
@@ -51,11 +51,11 @@ app.use(cors({
 app.use(express.json())
 
 // Pass MongoDB connection to bounties router
-setClientPromise(clientPromise)
+// setClientPromise(clientPromise) // No longer needed for serverless functions
 
 // API Routes
 // app.use('/api', postBountyCastRouter) // Now handled by Vercel serverless function
-app.use('/api', bountiesRouter)
+// app.use('/api', bountiesRouter) // Now handled by Vercel serverless function
 
 // Winner announcement route
 app.post('/api/announce-winner', announceWinnerHandler)
