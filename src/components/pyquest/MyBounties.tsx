@@ -385,7 +385,7 @@ export default function MyBounties() {
             No bounties yet
           </p>
           <p className="text-xs text-slate-600">
-            Create your first bounty to get started!
+            Your active Quests will appear here.
           </p>
         </div>
       )}
